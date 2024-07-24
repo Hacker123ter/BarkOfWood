@@ -1,0 +1,8 @@
+name: BarkOfWood
+version: '1.0'
+main: org.dw363.barkofwood.BarkOfWood
+api-version: '1.21'
+load: STARTUP
+author: dw363
+website: https://github.com/Hacker123ter
+description: Плагин, позволяющий восстанавливать обтёсанную древесину и брёвна.
