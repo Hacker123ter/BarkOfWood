@@ -15,41 +15,30 @@ public class BarkOfWood extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        // Регистрируем наш класс как слушателя событий
         getServer().getPluginManager().registerEvents(this, this);
     }
 
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
-        // Проверяем, что игрок использует основную руку (не левую)
         if (event.getHand() != EquipmentSlot.HAND) {
-            return; // Если это не основная рука, ничего не делаем
+            return;
         }
 
-        // Получаем предмет в руке игрока
         ItemStack item = event.getItem();
-        // Проверяем, что предмет существует и это костная мука
         if (item == null || item.getType() != Material.BONE_MEAL) {
-            return; // Если это не костная мука, выходим из метода
+            return;
         }
 
-        // Получаем блок, по которому игрок кликнул
         Block block = event.getClickedBlock();
-        // Проверяем, что блок существует
         if (block == null) {
-            return; // Если блок не найден, выходим из метода
+            return;
         }
 
-        // Определяем тип блока
         Material blockType = block.getType();
-        // Переменная для хранения нового типа блока
         Material newBlockType = null;
-        // Флаг для определения, является ли древесина очищенной
         boolean isStrippedWood = false;
 
-        // Проверяем тип блока и устанавливаем новый тип, если это очищенная древесина
         switch (blockType) {
-            // Если блок очищенная древесина (древесина), заменяем на обычную древесину
             case STRIPPED_OAK_LOG:
                 newBlockType = Material.OAK_LOG;
                 isStrippedWood = true;
@@ -115,8 +104,6 @@ public class BarkOfWood extends JavaPlugin implements Listener {
                 newBlockType = Material.WARPED_HYPHAE;
                 isStrippedWood = true;
                 break;
-
-            // Добавляем новые блоки для преобразования
             case STRIPPED_BAMBOO_BLOCK:
                 newBlockType = Material.BAMBOO_BLOCK;
                 isStrippedWood = true;
@@ -139,25 +126,18 @@ public class BarkOfWood extends JavaPlugin implements Listener {
                 break;
 
             default:
-                // Если тип блока не совпадает, ничего не делаем
                 break;
         }
 
-        // Если мы определили новый тип блока
         if (newBlockType != null) {
-            // Меняем тип блока на новый
             block.setType(newBlockType);
-            // Уменьшаем количество костной муки на 1
             item.setAmount(item.getAmount() - 1);
 
-            // Если это очищенная древесина, добавляем эффекты
             if (isStrippedWood) {
-                // Показываем зелёные частицы и проигрываем звук
                 block.getWorld().spawnParticle(Particle.HAPPY_VILLAGER, block.getLocation().add(0.5, 0.5, 0.5), 30, 0.5, 0.5, 0.5, 0.1);
                 block.getWorld().playSound(block.getLocation(), Sound.BLOCK_WOOD_PLACE, 1.0f, 1.0f);
             }
 
-            // Отменяем стандартное действие, чтобы предотвратить его выполнение
             event.setCancelled(true);
         }
     }
