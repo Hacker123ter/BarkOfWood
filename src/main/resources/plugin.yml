@@ -1,6 +1,6 @@
 name: BarkOfWood
-version: '1.0.1'
-main: org.dw363.barkofwood.BarkOfWood
+version: '1.0.2'
+main: org.dw363.barkofwood.Main
 api-version: '1.21'
 load: STARTUP
 author: dw363
