@@ -1,6 +1,6 @@
 ## BarkOfWood
 
-![Version](https://img.shields.io/badge/Версия-1.0.0-blue.svg)
+![Version](https://img.shields.io/badge/Версия-1.0.2-blue.svg)
 ![API](https://img.shields.io/badge/Paper%201.21%2B-blue.svg)
 
 <h3 align="center">Discord: luckytsb</h3>
