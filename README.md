@@ -14,7 +14,7 @@
 
 ## 🚀 Установка:
 
-- 😧 Скачайте <a href="https://github.com/Hacker123ter/BarkOfWood/raw/master/BarkOfWood-1.0.1%20paper-1.21.jar" target="_blank">BarkOfWood paper-1.21.jar</a>.
+- 😧 Скачайте <a href="https://github.com/Hacker123ter/BarkOfWood/raw/master/BarkOfWood-1.0.2.jar" target="_blank">BarkOfWood paper-1.21.jar</a>.
 - 🐈 Переместите его в папку "plugins" вашего сервера. (Убедитесь что **Ядро** и **Версия** совместимы с плагином)
 - 🪄 Перезапустите сервер.
 - 😸 Радуйтесь жизни!
